@@ -1,11 +1,12 @@
 {
-  "name": "koa-req-validator",
-  "version": "1.0.0",
+  "name": "@kobiton/koa-req-validator",
+  "version": "1.0.1",
   "description": "Koa middleware to validate request parameters",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "prepublish": "rimraf lib && babel src --out-dir lib",
-    "test": "mocha --compilers js:babel-register 'test/*.js'"
+    "build": "rimraf lib && babel src --out-dir lib",
+    "test": "mocha --compilers js:babel-register 'test/*.js'",
+    "deploy": "npm run build && cp package.json ./lib && npm publish ./lib"
   },
   "repository": {
     "type": "git",
